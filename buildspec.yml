@@ -18,8 +18,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: build
-  discard-paths: yes
-  s3:
-    bucket: party-artifacts-1
-    path: build-output/
+ 
