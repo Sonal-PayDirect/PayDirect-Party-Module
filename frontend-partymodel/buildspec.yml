@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+artifacts:
+  files:
+    - '**/*'
+  base-directory: build
+  discard-paths: yes
+  s3:
+    bucket: party-artifacts-1
+    path: build-output/

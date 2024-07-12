@@ -1,4 +1,3 @@
-// src/components/PartyList.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -11,7 +10,7 @@ const PartyList = () => {
 
   const fetchParties = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/parties');
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/parties`);
       setParties(response.data);
     } catch (error) {
       console.error('Error fetching parties:', error);

@@ -1,4 +1,3 @@
-// src/components/PartyForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -24,7 +23,7 @@ const PartyForm = () => {
         website
       };
       console.log('Party data:', partyData); // Log the party data being sent
-      const response = await axios.post(`http://localhost:3001/api/${partyType}s`, partyData);
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/${partyType}s`, partyData);
       console.log('Response:', response.data);
     } catch (error) {
       console.error('Error creating party', error);
