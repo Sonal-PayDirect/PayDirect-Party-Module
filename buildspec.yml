@@ -14,7 +14,12 @@ phases:
       - npm run build
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo Build completed
 artifacts:
   files:
     - '**/*'
+  base-directory: build
+  discard-paths: yes
+  s3:
+    bucket: party-artifacts-1
+    path: party-model/
