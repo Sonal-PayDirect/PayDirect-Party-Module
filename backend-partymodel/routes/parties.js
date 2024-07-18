@@ -1,24 +1,10 @@
-// routes/parties.js
 const express = require('express');
 const router = express.Router();
-const Party = require('../models/Party');
+const { getParties, createParty, updateParty, deleteParty } = require('../handlers/partyHandlers');
 
-router.get('/', async (req, res) => {
-  try {
-    const parties = await Party.findAll();
-    res.json(parties);
-  } catch (error) {
-    res.status(500).json({ error: 'Error fetching parties' });
-  }
-});
-
-router.post('/', async (req, res) => {
-  try {
-    const party = await Party.create(req.body);
-    res.status(201).json(party);
-  } catch (error) {
-    res.status(500).json({ error: 'Error creating party' });
-  }
-});
+router.get('/', getParties);
+router.post('/', createParty);
+router.put('/:partyId', updateParty);
+router.delete('/:partyId', deleteParty);
 
 module.exports = router;
