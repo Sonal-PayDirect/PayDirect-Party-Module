@@ -31,8 +31,10 @@ const PartyForm = () => {
 
   const handleSelectParty = async (id) => {
     try {
+      console.log(`Fetching party with ID: ${id}`); // Log the id
       const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/parties/${id}`);
       const party = response.data;
+      console.log(`Party fetched: ${JSON.stringify(party)}`); // Log the response
       setPartyId(party.party_id);
       setName(party.name);
       setEmail(party.email);
@@ -46,7 +48,6 @@ const PartyForm = () => {
       console.error('Error fetching party', error);
     }
   };
-
   const handleDeleteParty = async (id) => {
     try {
       await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/parties/${id}`);
