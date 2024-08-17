@@ -9,7 +9,7 @@ const sequelize = new Sequelize('PayDirect', null, null, {
       options: {
         domain: 'dTech-dev-1',  // Your domain name
         userName: 'sonal',  // Your Windows username
-        password: 'tech-dev-2@2024',  // Your Windows password
+        password: 'amity@2024',  // Your Windows password
       },
     },
     options: {
