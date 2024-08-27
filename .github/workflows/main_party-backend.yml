@@ -51,7 +51,7 @@ jobs:
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'party-backend'
+          app-name: 'party-module-backend'
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8D5D9B9B43E441BA969869D526F875C9 }}
