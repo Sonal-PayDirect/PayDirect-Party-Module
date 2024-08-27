@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'party-backend'
           slot-name: 'Production'
-          package: node-app
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8D5D9B9B43E441BA969869D526F875C9 }}
